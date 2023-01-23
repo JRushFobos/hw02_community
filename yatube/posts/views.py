@@ -7,11 +7,12 @@ num_posts = 10
 
 def index(request):
     posts = Post.objects.order_by('-pub_date')[:num_posts]
+    template = 'posts/index.html'
     context = {
        'text': 'Главная страница',
        'posts': posts,
     }
-    return render(request, 'posts/index.html', context)
+    return render(request, template, context)
 
 
 # View-функция для страницы сообщества:
@@ -26,9 +27,10 @@ def group_posts(request, slug):
     # Это аналог добавления
     # условия WHERE group_id = {group_id}
     posts = Post.objects.filter(group=group).order_by('-pub_date')[:num_posts]
+    template = 'posts/group_list.html'
     context = {
-        'text': 'Здесь будет информация о группах проекта Yatube',
-        'group': group,
-        'posts': posts,
+       'text': 'Здесь будет информация о группах проекта Yatube',
+       'group': group,
+       'posts': posts,
     }
-    return render(request, 'posts/group_list.html', context)
+    return render(request, template, context)
