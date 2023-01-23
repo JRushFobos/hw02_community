@@ -4,6 +4,7 @@ from .models import Post, Group
 
 num_posts = 10
 
+
 def index(request):
     # Одна строка вместо тысячи слов на SQL:
     # в переменную posts будет сохранена выборка из 10 объектов модели Post,

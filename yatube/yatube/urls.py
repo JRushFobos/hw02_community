@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-#импорт include позволит использовать адреса, включенные в приложения
+# Импорт include позволит использовать адреса, включенные в приложения
 
 urlpatterns = [
     # Сначала проверяем все пути, которые есть в приложении ice_cream
