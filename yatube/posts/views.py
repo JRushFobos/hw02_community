@@ -9,8 +9,8 @@ def index(request):
     posts = Post.objects.order_by('-pub_date')[:num_posts]
     template = 'posts/index.html'
     context = {
-       'text': 'Главная страница',
-       'posts': posts,
+        'text': 'Главная страница',
+        'posts': posts,
     }
     return render(request, template, context)
 
@@ -29,8 +29,8 @@ def group_posts(request, slug):
     posts = Post.objects.filter(group=group).order_by('-pub_date')[:num_posts]
     template = 'posts/group_list.html'
     context = {
-       'text': 'Здесь будет информация о группах проекта Yatube',
-       'group': group,
-       'posts': posts,
+        'text': 'Здесь будет информация о группах проекта Yatube',
+        'group': group,
+        'posts': posts,
     }
     return render(request, template, context)
