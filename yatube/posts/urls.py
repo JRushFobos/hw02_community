@@ -9,4 +9,4 @@ urlpatterns = [
     path('index/', views.index, name='index'),
     # Список групп
     path('group/<slug:slug>/', views.group_posts, name='group_list'),
-    ]
+]
