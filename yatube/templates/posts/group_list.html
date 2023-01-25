@@ -1,19 +1,22 @@
 {% extends 'base.html' %}
+
+{% block title %}
+  Лев Толстой – зеркало русской революции.
+{% endblock %}
+
 {% block content %}
-<title>
-  {{ title }}
-</title>
-      <div class="container py-5">
-        {% for post in posts %}
-        <ul>
-          <li>
-            Автор: {{ post.author.get_full_name }}
-          </li>
-          <li>
-            Дата публикации: {{ post.pub_date|date:"d E Y" }}
-          </li>
-        </ul>
-        <p>{{ post.text }}</p>
-      </div>
-      {% endfor %}
+<article>
+  <h1>Лев Толстой – зеркало русской революции.</h1>
+  {% for post in posts %}
+    <ul>
+      <li>
+        Автор: {{ post.author.get_full_name }}
+      </li>
+      <li>
+        Дата публикации: {{ post.pub_date|date:"d E Y" }}
+      </li>
+    </ul>
+    <p>{{ post.text|linebreaksbr }}</p>
+  {% endfor %}
+</article>
 {% endblock %}
