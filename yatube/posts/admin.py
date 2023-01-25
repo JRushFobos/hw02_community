@@ -1,6 +1,7 @@
 from .models import Post, Group
 from django.contrib import admin
 
+
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
     list_display = (
