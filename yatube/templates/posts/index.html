@@ -5,9 +5,9 @@
 {% endblock %}
 
 {% block content %}
-  <article>
-    <h1>Последние обновления на сайте</h1>
-    {% for post in posts %}
+<h1>Последние обновления на сайте</h1>
+  {% for post in posts %}
+    <article>
       <ul>
         <li>
           Автор: {{ post.author.get_full_name }}
@@ -16,11 +16,12 @@
           Дата публикации: {{ post.pub_date|date:"d E Y" }}
         </li>
       </ul>
-    <p>{{ post.text }}</p>
+    <p>{{ post.text|linenumbers }}</p>
     {% if post.group %}
     <a href="{% url 'posts:group_list' post.group.slug %}">все записи группы</a>
     {% endif %}
-    {% if not forloop.last %}<hr>{% endif %}
+    {% if not forloop.last %}
+    </article>
+    <hr>{% endif %}
   {% endfor %}
-  </article>
 {% endblock %}
