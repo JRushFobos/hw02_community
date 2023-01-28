@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 
 {% block title %}
-  Страница сообщества
+  Записи сообщества {{ group.title }}
 {% endblock %}
 
 {% block content %}
-  <h1>Записи сообщества</h1>
+  <h1> {{ group.title }}</h1>
+  <p>{{ group.description }}</p>
   {% for post in posts %}
     <article>
       <ul>
@@ -18,5 +19,6 @@
       </ul>
     <p>{{ post.text|linebreaksbr }}</p>
     </article>
+    {% if not forloop.last %}<hr>{% endif %}
   {% endfor %}
 {% endblock %}
