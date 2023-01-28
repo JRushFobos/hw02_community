@@ -1,20 +1,12 @@
 {% extends 'base.html' %}
 
 {% block title %}
-<<<<<<< HEAD
   Записи сообщества {{ group.title }}
 {% endblock %}
 
 {% block content %}
   <h1> {{ group.title }}</h1>
   <p>{{ group.description }}</p>
-=======
-  Страница сообщества {{ group.title }}
-{% endblock %}
-
-{% block content %}
-  <h1>Записи сообщества {{ group.description }}</h1>
->>>>>>> aa663b72d5d7211f745234026c6a6c760a0f03c9
   {% for post in posts %}
     <article>
       <ul>
